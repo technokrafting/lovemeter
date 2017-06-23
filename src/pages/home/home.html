@@ -1,0 +1,32 @@
+<ion-header>
+   <!--Header Bar-->
+  <ion-navbar color="primary">
+  <!--Title-->
+    <ion-title>Love Calculator</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--Content-->
+<ion-content padding>
+<form name="signForm" class="sign-form" [formGroup]="signForm" > 
+	<ion-list><!-- to display rows of contents using Ion-list-->
+		<ion-item><!--its an attribute or elements where we add our labels and inputs into it and each row is wrapped by ion-item-->
+			<ion-label floating>Name 1</ion-label><!--floating makes some animation change on UI screen -->
+			<ion-input type='text' [(ngModel)]="name1" formControlName="firstName"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Name 2</ion-label>
+			<ion-input type='text' [(ngModel)]="name2" formControlName="secondName"></ion-input>
+		</ion-item>
+	</ion-list>
+
+	<ion-card text-center>
+	<ion-card-header>
+	{{name1 || '???'}} and {{name2 || '???'}}
+	</ion-card-header>
+	<ion-card-content class="score">
+	{{score}}%
+	</ion-card-content>
+	</ion-card>
+ </form>
+</ion-content>
